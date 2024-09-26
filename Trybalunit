@@ -5,66 +5,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My GitHub Page</title>
 <style>
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  overflow-x: hidden; /* 横スクロールを防ぐ */
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
 h1 {
-  position: relative;
-  padding: 1rem 2rem calc(1rem + 10px);
-  background: #dc143c;
-  font-family: monospace;
-  color: #000;
-  max-width: 100%; /* 要素の幅を制限 */
-  box-sizing: border-box;
+position: relative;
+padding: 1rem 2rem calc(1rem + 10px);
+background: #dc143c; /* タイトルの背景色を赤に設定 */
+font-family: monospace; /* タイトルが動く文字であるためにモノスペースフォントを適用 */
+color: #000; /* タイトルの文字色を黒に設定 */
 }
 
 h1:before {
-  position: absolute;
-  top: -7px;
-  left: -7px;
-  width: calc(100% + 14px); /* 外枠の幅を調整 */
-  height: calc(100% + 14px); /* 外枠の高さを調整 */
-  content: '';
-  border: 4px solid #000;
-  box-sizing: border-box;
+position: absolute;
+top: -7px;
+left: -7px;
+width: 100%;
+height: 100%;
+content: '';
+border: 4px solid #000;
 }
 
 .console-container {
-  font-family: monospace;
-  color: #000;
-  background: #fff;
-  display: inline-block;
+font-family: monospace;
+color: #000;
+background: #fff;
+display: inline-block;
 }
 
 .console-underscore {
-  display: inline-block;
-  margin-left: 5px;
-  animation: blink 1s infinite;
+display: inline-block;
+margin-left: 5px;
+animation: blink 1s infinite;
 }
 
 @keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+0%, 100% {
+opacity: 1;
+}
+50% {
+opacity: 0;
+}
 }
 </style>
 </head>
 <body>
 <h1><span id="title-text"></span><span class="console-underscore">_</span></h1>
-<p>基本情報の入力をお願いいたします</p>
 
 <script type="text/javascript" src="https://app-webparts-hrbc.porterscloud.com/po-b.js" data-template-id="20162"></script>
 <script type="porters/webparts"></script>
@@ -75,15 +58,15 @@ let i = 0;
 let speed = 100;
 
 function typeWriter() {
-  if (i < text.length) {
-    document.getElementById("title-text").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
+if (i < text.length) {
+document.getElementById("title-text").innerHTML += text.charAt(i);
+i++;
+setTimeout(typeWriter, speed);
+}
 }
 
 window.onload = function() {
-  typeWriter();
+typeWriter();
 };
 </script>
 </body>
